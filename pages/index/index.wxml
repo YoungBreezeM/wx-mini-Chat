@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true">
+  <view class="tips" wx:if="{{!newslist.length}}">
+    正在载入聊天列表，请稍候...
+  </view>
+  <view class="item-avatar-md" wx:for="{{newslist}}" bindtap="toChat" data-name="{{item}}">
+          <image src="{{i.avatar}}"></image>
+          <view class="item-text">
+            <view class="text_box">
+              <view class="flex">
+                <text class="title">{{item}}</text>
+              </view>
+              <view class="flex">
+                <text class="message">{{i.text}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="item-time padding_half">
+            <text class="messagetime">{{i.updated}}</text>
+          </view> 
+  </view>
+
+</scroll-view>
